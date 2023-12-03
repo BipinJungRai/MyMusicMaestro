@@ -6,6 +6,7 @@ from django.core.files.images import ImageFile
 
 ROOT_DIR = Path('app_album_viewer') / 'management'
 
+# TODO - app_album_viewer_song_albums are not being created.
 class Command(BaseCommand):
     help = 'Seeds the database with initial data'
 
@@ -28,7 +29,7 @@ class Command(BaseCommand):
                 )
 
                 # Set the password
-                user.password = 'password'
+                user.set_password('password')
 
                 # Save the user
                 user.save()
@@ -71,3 +72,5 @@ class Command(BaseCommand):
 
                 # Save the album
                 album.save()
+
+        self.stdout.write(self.style.SUCCESS('Successfully seeded database'))

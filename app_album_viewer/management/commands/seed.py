@@ -6,7 +6,6 @@ from django.core.files.images import ImageFile
 
 ROOT_DIR = Path('app_album_viewer') / 'management'
 
-# TODO - app_album_viewer_song_albums are not being created.
 class Command(BaseCommand):
     help = 'Seeds the database with initial data'
 

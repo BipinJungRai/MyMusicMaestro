@@ -59,6 +59,8 @@ class Command(BaseCommand):
                             running_time=song_data['runtime']
                         )
                         album.songs.add(song)
+                        song.albums.add(album)
+
 
                 # Create comments and associate them with the user and album
                 for comment_data in album_data['comments']:
@@ -69,6 +71,8 @@ class Command(BaseCommand):
                     )
                     user.album_comments.add(comment)
                     album.comments.add(comment)
+
+                #
 
                 # Save the album
                 album.save()

@@ -32,10 +32,10 @@ class Album(models.Model):
     # (if more than one year away, it must be set to January)
     release_date = models.DateField(null=False, blank=False)
 
-    # songs (assuming I have a Song model defined separately)
+    # songs
     songs = models.ManyToManyField('Song', related_name='album_songs')
 
-    # comments (assuming I have a Comment model defined separately)
+    # comments
     comments = models.ManyToManyField('Comment', related_name='album_comments')
 
 
@@ -46,7 +46,7 @@ class Song(models.Model):
     # running time in seconds
     running_time = models.IntegerField(null=False, blank=False)
 
-    # albums (assuming I have an Album model defined separately)
+    # albums
     albums = models.ManyToManyField('Album', related_name='song_albums')
 
 
@@ -60,7 +60,7 @@ class User(AbstractUser):
     # display name
     display_name = models.CharField(max_length=100, null=True, blank=True)
 
-    # comments on albums (assuming I have a Comment model defined separately)
+    # comments on albums
     album_comments = models.ManyToManyField('Comment', related_name='user_comments')
 
     # permissions
@@ -69,10 +69,10 @@ class User(AbstractUser):
 
 
 class Comment(models.Model):
-    # user (assuming I have a User model defined separately)
+    # user
     user = models.ForeignKey('User', on_delete=models.CASCADE)
 
-    # album (assuming I have an Album model defined separately)
+    # album
     album = models.ForeignKey('Album', on_delete=models.CASCADE)
 
     # comment text

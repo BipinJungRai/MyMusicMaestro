@@ -30,8 +30,12 @@ class Command(BaseCommand):
                 # Set the password
                 user.set_password('password')
 
+                # Set the username as display_name + "#" + user id
+                user.username = f"{user.display_name}#{user.id}"
+
                 # Save the user
                 user.save()
+
 
                 # Cover art handling
                 image_path = album_data['cover']
@@ -70,8 +74,6 @@ class Command(BaseCommand):
                     )
                     user.album_comments.add(comment)
                     album.comments.add(comment)
-
-                #
 
                 # Save the album
                 album.save()

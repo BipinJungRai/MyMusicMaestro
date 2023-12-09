@@ -2,17 +2,17 @@
 body {
     background-color: #f8dd74;
     font-family: 'Inter', sans-serif;
-    display: flex;
+    /*display: flex;*/
     height: 100vh;
 }
 
 /* Center the content */
 .Title-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* Style the text inside the centered div */
@@ -31,22 +31,21 @@ body {
     margin-top: -20px;
 }
 
-.nav-link {
-    color: #285955; /* Change the text color */
-    font-size: 30px; /* Change the font size */
-    text-decoration: none; /* Remove the underline */
-}
+/*.nav-link {*/
+/*    color: #285955; !* Change the text color *!*/
+/*    font-size: 30px; !* Change the font size *!*/
+/*    text-decoration: none; !* Remove the underline *!*/
+/*}*/
 
-.nav-link:hover {
-    color: transparent;
-    font-weight: bold;
-}
+/*.nav-link:hover {*/
+/*    color: transparent;*/
+/*    font-weight: bold;*/
+/*}*/
 
-.navbar {
-    background-color: red;
-    border-bottom: 5px solid #285955;
-    padding: 10px 0; /* Adjust theç top and bottom padding */
-}
+/*.navbar {*/
+/*    background-color: red;*/
+/*    border-bottom: 5px solid #285955;*/
+/*}*/
 
 /* not working */
 .album-table {
@@ -57,4 +56,7 @@ body {
     border-bottom: 1px red;
 }
 
+#navbarNav{
+    justify-content: center;
+}
 

@@ -52,6 +52,7 @@ class Command(BaseCommand):
                     price=album_data['price'],
                     format=album_data['format'],
                     release_date=album_data['release_date'],
+                    description=album_data['description'],
                     **kwargs
                 )
 

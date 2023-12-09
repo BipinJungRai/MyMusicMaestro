@@ -6,6 +6,7 @@ from django.core.files.images import ImageFile
 
 ROOT_DIR = Path('app_album_viewer') / 'management'
 
+
 class Command(BaseCommand):
     help = 'Seeds the database with initial data'
 
@@ -36,7 +37,6 @@ class Command(BaseCommand):
                 # Save the user
                 user.save()
 
-
                 # Cover art handling
                 image_path = album_data['cover']
                 if image_path is not None:
@@ -52,7 +52,6 @@ class Command(BaseCommand):
                     price=album_data['price'],
                     format=album_data['format'],
                     release_date=album_data['release_date'],
-                    description=album_data['description'],
                     **kwargs
                 )
 
@@ -65,7 +64,6 @@ class Command(BaseCommand):
                         )
                         album.songs.add(song)
                         song.albums.add(album)
-
 
                 # Create comments and associate them with the user and album
                 for comment_data in album_data['comments']:

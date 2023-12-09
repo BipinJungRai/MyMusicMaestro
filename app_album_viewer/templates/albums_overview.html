@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<table class="table album-table">
+  <thead>
+    <tr>
+      <th scope="col">Cover</th>
+      <th scope="col">Title</th>
+      <th scope="col">Artist</th>
+      <th scope="col">Price</th>
+      <th scope="col">Format</th>
+      <th scope="col">Release Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for album in albums %}
+    <tr>
+      <td class="text-center"><img src="{{ album.cover_art.url }}" alt="{{ album.title }} cover" width="100"></td>
+      <td class="text-center">{{ album.title }}</td>
+      <td class="text-center">{{ album.artist }}</td>
+      <td class="text-center">{{ album.price }}</td>
+      <td class="text-center">{{ album.format }}</td>
+      <td class="text-center">{{ album.release_date }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

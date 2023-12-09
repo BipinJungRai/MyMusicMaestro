@@ -47,6 +47,7 @@ class Command(BaseCommand):
 
                 # Create album
                 album = Album.objects.create(
+                    title=album_data['title'],
                     artist=album_data['artist'],
                     price=album_data['price'],
                     format=album_data['format'],

@@ -1,0 +1,60 @@
+/* Set the background color for the entire website */
+body {
+    background-color: #f8dd74;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+/* Center the content */
+.Title-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Style the text inside the centered div */
+.Title-content h1, .Title-content h2 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.Title-content h1 {
+    font-size: 100px;
+    color: #285955;
+}
+
+.Title-content h1.second-line {
+    font-size: 100px;
+    margin-top: -20px;
+}
+
+.nav-link {
+    color: #285955; /* Change the text color */
+    font-size: 30px; /* Change the font size */
+    text-decoration: none; /* Remove the underline */
+}
+
+.nav-link:hover {
+    color: transparent;
+    font-weight: bold;
+}
+
+.navbar {
+    background-color: red;
+    border-bottom: 5px solid #285955;
+    padding: 10px 0; /* Adjust theç top and bottom padding */
+}
+
+/* not working */
+.album-table {
+    background-color: blue !important;
+}
+
+.album-table tr {
+    border-bottom: 1px red;
+}
+
+

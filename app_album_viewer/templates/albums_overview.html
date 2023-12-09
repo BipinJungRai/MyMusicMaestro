@@ -2,7 +2,16 @@
 {% load i18n %}
 {% load static %}
 {% block content %}
-<table class="table album-table">
+
+<div class="text-center">
+    <form method="get" class="d-inline-block mx-auto">
+        <input type="text" name="q" placeholder="Search albums">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<a href="{% url 'album_add' %}" class="btn btn-primary">Add Album</a>
+<table class="table album-table ">
   <thead>
     <tr>
       <th scope="col">Cover</th>
@@ -11,17 +20,25 @@
       <th scope="col">Price</th>
       <th scope="col">Format</th>
       <th scope="col">Release Date</th>
+      <th scope="col">Description</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     {% for album in albums %}
     <tr>
-      <td class="text-center"><img src="{{ album.cover_art.url }}" alt="{{ album.title }} cover" width="100"></td>
-      <td class="text-center">{{ album.title }}</td>
-      <td class="text-center">{{ album.artist }}</td>
-      <td class="text-center">{{ album.price }}</td>
-      <td class="text-center">{{ album.format }}</td>
-      <td class="text-center">{{ album.release_date }}</td>
+      <td>
+        <a href="{% url 'album_detail' album.id %}">  <!-- Add this line -->
+          <img src="{{ album.cover_art.url }}" alt="{{ album.title }} cover" width="200">
+        </a>  <!-- Add this line -->
+      </td>
+      <td>{{ album.title }}</td>
+      <td>{{ album.artist }}</td>
+      <td>{{ album.price }}</td>
+      <td>{{ album.format }}</td>
+      <td>{{ album.release_date }}</td>
+      <td>{{ album.description|default:"n/a" }}</td>
+      <td><a href="{% url 'album_edit' album.id %}" class="btn btn-primary">Edit</a></td>
     </tr>
     {% endfor %}
   </tbody>

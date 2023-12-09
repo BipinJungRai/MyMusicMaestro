@@ -40,6 +40,10 @@ class Album(models.Model):
 
 
 class Song(models.Model):
+    def __init__(self, *args, **kwargs):
+        super().__init__(args, kwargs)
+        self.album = None
+
     # title
     title = models.CharField(max_length=100, unique=False, null=False, blank=False)
 

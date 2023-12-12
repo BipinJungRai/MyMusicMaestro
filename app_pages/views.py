@@ -1,11 +1,5 @@
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages  # Change this line
-from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse, request
-from app_album_viewer.models import Album, Song, Comment
-from django.contrib.auth.hashers import check_password
-from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
 
 
 def show_home(request):
@@ -23,10 +17,15 @@ def show_contact(request):
     return render(request, 'contact.html')
 
 
-# fuction for the account page
-def show_account(request):
-     return render(request, 'account.html')
-
-def show_login(request):
-    # logic for the login page
-    return render(request, 'login.html')
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('account')  # Redirect to the account page
+        else:
+            return render(request, 'login.html', {'error': 'Invalid username or password'})
+    else:
+        return render(request, 'login.html')

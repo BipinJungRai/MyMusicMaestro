@@ -127,3 +127,6 @@ MEDIA_URL = '/media/'
 # Email setup.
 DEFAULT_FROM_EMAIL = 'noreply@mymusicmaestro.net'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Specify the custom user model
+AUTH_USER_MODEL = 'app_album_viewer.User'

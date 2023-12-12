@@ -52,7 +52,7 @@ class Song(models.Model):
 
 class User(AbstractUser):
     # username
-    username = models.CharField(max_length=50, null=True, blank=True)
+    username = models.CharField(max_length=50, null=True, blank=True, unique=True)
 
     # password
     password = models.CharField(max_length=50, null=False, blank=False)
@@ -66,7 +66,6 @@ class User(AbstractUser):
     # permissions
     user_permissions = models.ManyToManyField(Permission, related_name='user_permissions')
     groups = models.ManyToManyField(Group, related_name='user_groups')
-
 
 class Comment(models.Model):
     # user

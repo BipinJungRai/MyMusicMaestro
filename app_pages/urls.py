@@ -1,11 +1,18 @@
 from django.urls import path
 from . import views
+from .views import login_view
 
 # Static Pages
 urlpatterns = [
     path('', views.show_home, name='page_home'),
     path('about/', views.show_about, name='page_about'),
     path('contact/', views.show_contact, name='page_contact'),
-    path('account/', views.show_account, name='page_account'),
-    path('login/', views.show_login, name='page_login'),
+    path('login/', login_view, name='page_login'),  # add this line
+
+
+    # path('account/', show_account, name='page_account'),
 ]
+
+
+
+

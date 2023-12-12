@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Your Comments</h2>
+                {# Subheading showing username and display name #}
+                {% if comments %}
+                    {% with first_comment=comments.0 %}
+                        <p>
+                            Username: {{ first_comment.user.username }}<br>
+                            Display Name: {{ first_comment.user.display_name }}
+                        </p>
+                    {% endwith %}
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <h1 class="text-center mb-4">Comments for Album: {{ album.title }}</h1>
+
+                {% for comment in comments %}
+                    <div class="comment card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Album:</h5>
+                            <p class="card-subtitle mb-2 text-muted">
+                                {{ comment.album.title }}
+                            </p>
+                            <p class="card-text">
+                                {{ comment.text | linebreaks }}
+                            </p>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="text-center">
+                        No comments made...yet >:)
+                    </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

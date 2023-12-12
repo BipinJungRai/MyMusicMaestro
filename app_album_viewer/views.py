@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
-from app_album_viewer.forms import AlbumForm, SongForm
+from app_album_viewer.forms import AlbumForm
 from app_album_viewer.models import Album, Song
 
 
@@ -81,5 +81,16 @@ def song_choices(request, album_id):
         return redirect('album_songs', album_id=album.id)
     else:
         all_songs = Song.objects.all()
-        return render(request, 'song_choices.html', {'songs': all_songs, 'album': album})
+        selected_songs = album.songs.all()
+        unselected_songs = all_songs.difference(selected_songs)
+        return render(request, 'song_choices.html',
+                      {'selected_songs': selected_songs, 'unselected_songs': unselected_songs, 'album': album})
 
+
+# fuction for the account page
+from app_album_viewer.models import Comment
+
+
+def show_account(request):
+    comments = Comment.objects.filter(user=request.user)
+    return render(request, 'account.html', {'comments': comments})

@@ -5,8 +5,13 @@
 {% block content %}
 <form method="POST">
   {% csrf_token %}
-  {% for song in songs %}
-    <input type="checkbox" name="song_ids" value="{{ song.id }}" {% if song in album.songs.all %}checked{% endif %}>{{ song.title }}<br>
+  <h2>Selected Songs</h2>
+  {% for song in selected_songs %}
+    <input type="checkbox" name="song_ids" value="{{ song.id }}" checked>{{ song.title }}<br>
+  {% endfor %}
+  <h2>Unselected Songs</h2>
+  {% for song in unselected_songs %}
+    <input type="checkbox" name="song_ids" value="{{ song.id }}">{{ song.title }}<br>
   {% endfor %}
   <input type="submit" value="Update Tracklist">
 </form>

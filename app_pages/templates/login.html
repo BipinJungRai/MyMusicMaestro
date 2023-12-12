@@ -16,7 +16,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Login</button>
        <form method="POST">
-  {% csrf_token %}
+    {% csrf_token %}
         {% if error %}
           <div class="alert alert-danger mt-3" role="alert">
             {{ error }}

@@ -21,7 +21,7 @@
       <th scope="col">Format</th>
       <th scope="col">Release Date</th>
       <th scope="col">Description</th>
-      <th scope="col"></th>
+      <th scope="col">Modify/Delete (Delete within edit)</th>
     </tr>
   </thead>
   <tbody>
@@ -34,7 +34,7 @@
       </td>
       <td>{{ album.title }}</td>
       <td>{{ album.artist }}</td>
-      <td>{{ album.price }}</td>
+      <td>£{{ album.price }}</td>
       <td>{{ album.format }}</td>
       <td>{{ album.release_date }}</td>
       <td>{{ album.description|default:"n/a" }}</td>
@@ -44,3 +44,5 @@
   </tbody>
 </table>
 {% endblock %}
+
+{# TODO comment count per album#}

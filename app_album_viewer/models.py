@@ -6,7 +6,7 @@ from django.db import models
 
 class Album(models.Model):
     # cover art image optional; they use a default image if a cover art image is not specified
-    cover_art = models.ImageField(upload_to='album_covers', null=True, blank=True, default='default_cover.jpg')
+    cover_art = models.ImageField(upload_to='album_covers', null=True, blank=True, default='album_covers/default_cover.png')
 
     # title, which is required and may not be unique
     title = models.CharField(max_length=100, unique=False, null=False, blank=False)

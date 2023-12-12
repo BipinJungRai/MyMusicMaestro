@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
-from app_album_viewer.forms import AlbumForm
+from app_album_viewer.forms import AlbumForm, SongForm
 from app_album_viewer.models import Album, Song
 
 
@@ -58,7 +58,28 @@ def album_songs(request, album_id):
     album = get_object_or_404(Album, id=album_id)
     songs = album.songs.all()
     return render(request, 'album_songs.html', {'album': album, 'songs': songs})
+
+
 def show_album_detail(request, album_id):
     album = get_object_or_404(Album, id=album_id)
     return render(request, 'album_detail.html', {'album': album})
+
+
+def show_album_detail(request, album_id):
+    album = get_object_or_404(Album, id=album_id)
+    comments = album.comments.all()
+    return render(request, 'album_detail.html', {'album': album, 'comments': comments})
+
+
+def song_choices(request, album_id):
+    album = get_object_or_404(Album, id=album_id)
+    if request.method == 'POST':
+        song_ids = request.POST.getlist('song_ids')
+        songs = Song.objects.filter(id__in=song_ids)
+        album.songs.clear()
+        album.songs.add(*songs)
+        return redirect('album_songs', album_id=album.id)
+    else:
+        album_songs = album.songs.all()
+        return render(request, 'song_choices.html', {'songs': album_songs})
 

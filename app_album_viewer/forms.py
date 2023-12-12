@@ -1,6 +1,6 @@
 from django import forms
 from django.forms.widgets import DateInput
-from app_album_viewer.models import Album
+from app_album_viewer.models import Album, Song
 
 
 class AlbumForm(forms.ModelForm):
@@ -10,3 +10,9 @@ class AlbumForm(forms.ModelForm):
         widgets = {
             'release_date': DateInput(attrs={'type': 'date'}),
         }
+
+
+class SongForm(forms.ModelForm):
+    class Meta:
+        model = Song
+        fields = ['title', 'running_time']

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+  {% for song in songs %}
+    <input type="checkbox" name="song_ids" value="{{ song.id }}" {% if song in album.songs.all %}checked{% endif %}>{{ song.title }}<br>
+  {% endfor %}
+  <input type="submit" value="Update Tracklist">
+</form>
+{% endblock %}

@@ -80,6 +80,6 @@ def song_choices(request, album_id):
         album.songs.add(*songs)
         return redirect('album_songs', album_id=album.id)
     else:
-        album_songs = album.songs.all()
-        return render(request, 'song_choices.html', {'songs': album_songs})
+        all_songs = Song.objects.all()
+        return render(request, 'song_choices.html', {'songs': all_songs, 'album': album})
 

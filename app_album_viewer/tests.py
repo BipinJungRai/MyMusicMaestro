@@ -1,11 +1,9 @@
-# Import necessary modules and models
 from django.contrib.auth import get_user_model
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.utils import timezone
 
-from app_album_viewer.models import Album, Song, Comment  # Import models from the app
-# Import the custom User model
+from app_album_viewer.models import Album, Song, Comment
 from .models import User
 
 

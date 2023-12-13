@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 
 from app_album_viewer.forms import AlbumForm
-from app_album_viewer.models import Album, Song
+from app_album_viewer.models import Album, Song, Comment
 
 
 # Create your views here.
@@ -90,7 +90,6 @@ def song_choices(request, album_id):
 
 
 # fuction for the account page
-from app_album_viewer.models import Comment
 
 
 @login_required(login_url='page_login')

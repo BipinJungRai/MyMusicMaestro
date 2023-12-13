@@ -2,6 +2,14 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase, Client
 from django.urls import reverse
 
+# LoginViewTest tests the login functionality.
+# LogoutViewTest tests the logout functionality.
+# LoginTemplateTest tests if the correct template is used for the login page.
+# HomePageTest tests if the correct template is used for the home page.
+# AboutPageTest tests if the correct template is used for the about page.
+# ContactPageTest tests if the correct template is used for the contact page.
+# ErrorHandlingTest tests how the application handles requests to a non-existent URL.
+
 User = get_user_model()
 
 
@@ -59,3 +67,13 @@ class ContactPageTest(TestCase):
         response = self.client.get(reverse('page_contact'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'contact.html')
+
+
+class ErrorHandlingTest(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.error_url = '/dummy_url/'
+
+    def test_error_handling(self):
+        response = self.client.get(self.error_url)
+        self.assertEqual(response.status_code, 404)

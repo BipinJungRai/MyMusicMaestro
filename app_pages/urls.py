@@ -9,6 +9,7 @@ urlpatterns = [
     path('about/', views.show_about, name='page_about'),
     path('contact/', views.show_contact, name='page_contact'),
     path('login/', login_view, name='page_login'),
+    path('recommend-a-friend/', views.recommend_friend, name='recommend_friend'),
 
     # path('account/', show_account, name='page_account'),
 ]

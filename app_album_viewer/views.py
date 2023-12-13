@@ -26,7 +26,7 @@ def show_album_songs(request, album_id):
 def edit_album(request, album_id):
     album = get_object_or_404(Album, id=album_id)
     if request.method == 'POST':
-        form = AlbumForm(request.POST, instance=album)
+        form = AlbumForm(request.POST, request.FILES, instance=album)
         if form.is_valid():
             form.save()
             return redirect('albums_overview')

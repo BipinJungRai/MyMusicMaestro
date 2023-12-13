@@ -1,5 +1,16 @@
 from django.contrib.auth.models import AbstractUser, Permission, Group
+from django.core.exceptions import ValidationError
 from django.db import models
+from django.utils.translation import gettext_lazy as _
+
+
+# function to validate that a number is positive for the price field
+def validate_positive(value):
+    if value < 0:
+        raise ValidationError(
+            _('%(value)s is not a positive number'),
+            params={'value': value},
+        )
 
 
 class Album(models.Model):
@@ -16,8 +27,9 @@ class Album(models.Model):
     # artist, which is a string, and required
     artist = models.CharField(max_length=100, null=False, blank=False)
 
-    # price, in GBP, which is required but may be zero
-    price = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, default=0.00)
+    # price, in GBP, which is required but may be zero and cannot be negative
+    price = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, default=0.00,
+                                validators=[validate_positive])
 
     # format, one of 'Digital download', 'CD', 'Vinyl'
     FORMAT_CHOICES = [

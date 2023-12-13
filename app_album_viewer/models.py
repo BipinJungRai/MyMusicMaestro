@@ -21,9 +21,9 @@ class Album(models.Model):
 
     # format, one of 'Digital download', 'CD', 'Vinyl'
     FORMAT_CHOICES = [
-        ('Digital download', 'Digital download'),  # 'Digital download' will be stored in the database
-        ('CD', 'CD'),  # 'CD' will be stored in the database
-        ('Vinyl', 'Vinyl'),  # 'Vinyl' will be stored in the database
+        ('Digital download', 'Digital download'),
+        ('CD', 'CD'),
+        ('Vinyl', 'Vinyl'),
     ]
     format = models.CharField(max_length=20, choices=FORMAT_CHOICES, null=False, blank=False)
 

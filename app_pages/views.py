@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 
@@ -18,14 +19,17 @@ def show_contact(request):
 
 
 def login_view(request):
+    # logic for the login page
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('account')  # Redirect to the account page
+            return redirect('account')
         else:
-            return render(request, 'login.html', {'error': 'Invalid username or password'})
+
+            messages.error(request, 'Invalid username or password')
+            return render(request, 'login.html')
     else:
         return render(request, 'login.html')

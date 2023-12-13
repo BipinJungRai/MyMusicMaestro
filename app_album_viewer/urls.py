@@ -1,5 +1,7 @@
 from django.urls import path
+
 from . import views
+from .views import logout_view
 
 # Dynamic Pages
 
@@ -14,5 +16,6 @@ urlpatterns = [
     path('album_detail/<int:album_id>/', views.show_album_detail, name='album_detail'),
     path('album_songs/<int:album_id>/', views.album_songs, name='album_songs'),
     path('account/', views.show_account, name='account'),
+    path('logout/', logout_view, name='page_logout'),
 
 ]

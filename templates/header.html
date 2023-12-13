@@ -3,8 +3,9 @@
 
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light navbar-transparent custom-navbar ">
-         <img src="{% static 'SapientCLTRSpin.gif' %}" width="100" height="100" class="d-inline-block align-top" alt="">
-        <button class="navbar-toggler custom-navbar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="{% static 'SapientCLTRSpin.gif' %}" width="100" height="100" class="d-inline-block align-top" alt="">
+        <button class="navbar-toggler custom-navbar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -22,8 +23,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/albums/">{% trans 'Albums' %}</a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'page_login' %}">{% trans 'Login' %}</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account' %}">{% trans 'Account' %}</a>
                 </li>
             </ul>
         </div>

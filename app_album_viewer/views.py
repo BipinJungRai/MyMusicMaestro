@@ -1,3 +1,5 @@
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 
 from app_album_viewer.forms import AlbumForm
@@ -91,6 +93,12 @@ def song_choices(request, album_id):
 from app_album_viewer.models import Comment
 
 
+@login_required(login_url='page_login')
 def show_account(request):
     comments = Comment.objects.filter(user=request.user)
     return render(request, 'account.html', {'comments': comments})
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('page_home')  # Redirect to the home page after logout

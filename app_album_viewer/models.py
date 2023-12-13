@@ -69,7 +69,7 @@ class User(AbstractUser):
 
 class Comment(models.Model):
     # user
-    user = models.ForeignKey('User', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_comments')
 
     # album
     album = models.ForeignKey('Album', on_delete=models.CASCADE)

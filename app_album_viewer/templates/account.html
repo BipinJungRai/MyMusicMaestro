@@ -12,7 +12,7 @@
                     {% with first_comment=comments.0 %}
                         <p>
                             {% trans 'UsernameLabel' %}: {{ first_comment.user.username }}<br>
-                            {% trans 'DisplayNameLabel' %} {{ first_comment.user.display_name }}
+                            {% trans 'DisplayNameLabel' %}: {{ first_comment.user.display_name }}
                         </p>
                     {% endwith %}
                 {% endif %}

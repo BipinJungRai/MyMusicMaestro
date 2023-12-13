@@ -2,11 +2,10 @@ from django.contrib.auth.models import AbstractUser, Permission, Group
 from django.db import models
 
 
-# Create your models here.
-
 class Album(models.Model):
     # cover art image optional; they use a default image if a cover art image is not specified
-    cover_art = models.ImageField(upload_to='album_covers', null=True, blank=True, default='album_covers/default_cover.png')
+    cover_art = models.ImageField(upload_to='album_covers', null=True, blank=True,
+                                  default='album_covers/default_cover.png')
 
     # title, which is required and may not be unique
     title = models.CharField(max_length=100, unique=False, null=False, blank=False)
@@ -66,6 +65,7 @@ class User(AbstractUser):
     # permissions
     user_permissions = models.ManyToManyField(Permission, related_name='user_permissions')
     groups = models.ManyToManyField(Group, related_name='user_groups')
+
 
 class Comment(models.Model):
     # user

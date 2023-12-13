@@ -90,9 +90,6 @@ def song_choices(request, album_id):
                       {'selected_songs': selected_songs, 'unselected_songs': unselected_songs, 'album': album})
 
 
-# fuction for the account page
-
-
 @login_required(login_url='page_login')
 def show_account(request):
     comments = Comment.objects.filter(user=request.user)

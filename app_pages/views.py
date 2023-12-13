@@ -10,23 +10,23 @@ from app_album_viewer.models import Album
 from app_pages.forms import RecommendFriendForm
 
 
+# Function to display the home page
 def show_home(request):
-    # logic for the home page
     return render(request, 'home.html')
 
 
+# Function to display the about page
 def show_about(request):
-    # logic for the about page
     return render(request, 'about.html')
 
 
+# Function to display the contact page
 def show_contact(request):
-    # logic for the contact page
     return render(request, 'contact.html')
 
 
+# Function to handle user login
 def login_view(request):
-    # logic for the login page
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -42,6 +42,7 @@ def login_view(request):
         return render(request, 'login.html')
 
 
+# Function to recommend a friend
 def recommend_friend(request):
     if not request.user.is_authenticated:
         messages.add_message(request, messages.ERROR, _('MustBeLoggedIn'))

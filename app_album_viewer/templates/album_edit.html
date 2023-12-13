@@ -6,7 +6,7 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">{% trans 'SaveChangesButton' %}</button>
+        <button type="submit" class="btn btn-save">{% trans 'SaveChangesButton' %}</button>
     </form>
     <form method="post" action="{% url 'album_delete' form.instance.id %}">
         {% csrf_token %}

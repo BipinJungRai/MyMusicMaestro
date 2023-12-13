@@ -6,7 +6,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
-                <a href="{% url 'page_logout' %}" class="btn btn-primary">{% trans 'LogoutButton' %}</a>
+                <a href="{% url 'page_logout' %}" class="btn btn-primary-logout">{% trans 'LogoutButton' %}</a>
                 <h2>{% trans 'YourCommentsHeader' %}</h2>
                 {% if comments %}
                     {% with first_comment=comments.0 %}

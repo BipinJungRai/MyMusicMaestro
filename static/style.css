@@ -51,6 +51,13 @@ body {
     justify-content: center;
 }
 
+
+.d-inline-block.align-top {
+    width: 100px;
+    height: 100px;
+}
+
+
 .footer-style {
     background-color: antiquewhite;
     color: darkred;
@@ -61,7 +68,60 @@ body {
     color: crimson;
 }
 
+.table.album-table {
+    border-color: #285955 !important;
+    border: 7px solid #285955 !important;
+}
 
+.btn.btn-primary {
+    background-color: #285955;
+    border-color: #285955;
+}
 
+.btn.btn-primary:hover {
+    background-color: limegreen;
+    border-color: limegreen;
+    font-weight: bold;
+
+}
+
+.btn.btn-save {
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+
+.btn.btn-save:hover {
+    color: white;
+    font-weight: bold;
+    background-color: limegreen;
+    border-color: limegreen;
+}
+
+.btn.btn-danger {
+    background-color: #BE0808;
+    border-color: #BE0808;
+    color: white;
+}
+
+.btn.btn-danger:hover {
+    background-color: red;
+    border-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-primary-logout {
+    background-color: #BE0808;
+    border-color: #BE0808;
+    color: white;
+}
+
+.btn-primary-logout:hover {
+    background-color: red;
+    border-color: red;
+    color: white;
+    font-weight: bold;
+}
 
 

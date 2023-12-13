@@ -10,3 +10,45 @@ msgstr "Why not take a look at this album I think you'll enjoy? It's called %(al
 
 msgid "RecommendEmailMessageWithUser"
 msgstr "%(user)s thinks you'll enjoy this album. It's called %(album)s."
+
+msgid "SendRecommendation"
+msgstr "Send Recommendation"
+
+msgid "LoginHeader"
+msgstr "Login"
+
+msgid "UsernameLabel"
+msgstr "Username"
+
+msgid "PasswordLabel"
+msgstr "Password"
+
+msgid "LoginButton"
+msgstr "Login"
+
+msgid "Titleline1"
+msgstr "MyMusic"
+
+msgid "Titleline2"
+msgstr "Maestro"
+
+msgid "ContactUsHeader"
+msgstr "Contact Us"
+
+msgid "EmailLabel"
+msgstr "Email"
+
+msgid "PhoneLabel"
+msgstr "Phone Number"
+
+msgid "ContactEmail"
+msgstr "Example@mail.com"
+
+msgid "ContactPhone"
+msgstr "999"
+
+msgid "AboutHeader"
+msgstr "About This Project"
+
+msgid "AboutDescription"
+msgstr "This project is a web application for viewing and managing music albums. It allows users to search for albums, view album details, and manage the song list of each album. The application is built using Python and Django, and it uses Bootstrap for the frontend design."

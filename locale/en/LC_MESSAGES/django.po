@@ -2,3 +2,23 @@ msgid ""
 msgstr ""
 "Language: en\n"
 
+msgid "AppName"
+msgstr "MyMusic Maestro"
+
+msgid "copyright"
+msgstr " &copy; Copyright"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "About"
+msgstr "About"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Albums"
+msgstr "Albums"
+
+msgid "Account"
+msgstr "Account"

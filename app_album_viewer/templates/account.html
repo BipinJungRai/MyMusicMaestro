@@ -6,25 +6,24 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
-                <a href="{% url 'page_logout' %}" class="btn btn-primary">Logout</a>
-                <h2>Your Comments</h2>
-                {# Subheading showing username and display name #}
+                <a href="{% url 'page_logout' %}" class="btn btn-primary">{% trans 'LogoutButton' %}</a>
+                <h2>{% trans 'YourCommentsHeader' %}</h2>
                 {% if comments %}
                     {% with first_comment=comments.0 %}
                         <p>
-                            Username: {{ first_comment.user.username }}<br>
-                            Display Name: {{ first_comment.user.display_name }}
+                            {% trans 'UsernameLabel' %}: {{ first_comment.user.username }}<br>
+                            {% trans 'DisplayNameLabel' %} {{ first_comment.user.display_name }}
                         </p>
                     {% endwith %}
                 {% endif %}
             </div>
             <div class="col-md-8">
-                <h1 class="text-center mb-4">Comments for Album: {{ album.title }}</h1>
+                <h1 class="text-center mb-4">{% trans 'CommentsForAlbumHeader' %}: {{ album.title }}</h1>
 
                 {% for comment in comments %}
                     <div class="comment card mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">Album:</h5>
+                            <h5 class="card-title">{% trans 'AlbumLabel' %}:</h5>
                             <p class="card-subtitle mb-2 text-muted">
                                 {{ comment.album.title }}
                             </p>
@@ -35,7 +34,7 @@
                     </div>
                 {% empty %}
                     <p class="text-center">
-                        No comments made...yet >:)
+                        {% trans 'AccountNoCommentsMessage' %}
                     </p>
                 {% endfor %}
             </div>

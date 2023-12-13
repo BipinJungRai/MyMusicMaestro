@@ -1,3 +1,130 @@
 msgid ""
 msgstr ""
 "Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "SelectedSongsHeader"
+msgstr "Selected Songs"
+
+msgid "UnselectedSongsHeader"
+msgstr "Unselected Songs"
+
+msgid "UpdateTracklistButton"
+msgstr "Update Tracklist"
+
+msgid "SearchPlaceholder"
+msgstr "Search albums"
+
+msgid "SearchButton"
+msgstr "Search"
+
+msgid "AddAlbumButton"
+msgstr "Add Album"
+
+msgid "CoverHeader"
+msgstr "Cover"
+
+msgid "TitleHeader"
+msgstr "Title"
+
+msgid "ArtistHeader"
+msgstr "Artist"
+
+msgid "PriceHeader"
+msgstr "Price"
+
+msgid "FormatHeader"
+msgstr "Format"
+
+msgid "ReleaseDateHeader"
+msgstr "Release Date"
+
+msgid "DescriptionHeader"
+msgstr "Description"
+
+msgid "ModifyDeleteHeader"
+msgstr "Modify/Delete (Delete within edit)"
+
+msgid "EditButton"
+msgstr "Edit"
+
+msgid "CurrencySymbol"
+msgstr "£"
+
+msgid "AlbumSongsHeader"
+msgstr "Songs"
+
+msgid "EditSongListButton"
+msgstr "Edit Song List/Track List"
+
+msgid "AlbumSongsTableTitleHeader"
+msgstr "Title"
+
+msgid "RunningTimeHeader"
+msgstr "Running Time (seconds)"
+
+msgid "EditAlbumHeader"
+msgstr "Edit Album"
+
+msgid "SaveChangesButton"
+msgstr "Save changes"
+
+msgid "DeleteAlbumButton"
+msgstr "Delete Album"
+
+msgid "ArtistLabel"
+msgstr "Artist"
+
+msgid "PriceLabel"
+msgstr "Price"
+
+msgid "FormatLabel"
+msgstr "Format"
+
+msgid "ReleaseDateLabel"
+msgstr "Release Date"
+
+msgid "DescriptionLabel"
+msgstr "Description"
+
+msgid "RecommendFriendButton"
+msgstr "Recommend a Friend"
+
+msgid "ViewSongsButton"
+msgstr "View Songs"
+
+msgid "CommentsHeader"
+msgstr "Comments"
+
+msgid "NoCommentsMessage"
+msgstr "No comments yet."
+
+msgid "CommentCountHeader"
+msgstr "Comment Count"
+
+msgid "Album_add.Header"
+msgstr "Create an Album"
+
+msgid "Album_add.Button"
+msgstr "Add Album"
+
+msgid "LogoutButton"
+msgstr "Logout"
+
+msgid "YourCommentsHeader"
+msgstr "Your Comments"
+
+msgid "UsernameLabel"
+msgstr "Username"
+
+msgid "DisplayNameLabel"
+msgstr "Display Name"
+
+msgid "CommentsForAlbumHeader"
+msgstr "Comments for Album"
+
+msgid "AlbumLabel"
+msgstr "Album"
+
+msgid "AccountNoCommentsMessage"
+msgstr "No comments made...yet >:)"

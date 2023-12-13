@@ -3,46 +3,49 @@
 {% load static %}
 {% block content %}
 
-<div class="text-center">
-    <form method="get" class="d-inline-block mx-auto">
-        <input type="text" name="q" placeholder="Search albums">
-        <button type="submit">Search</button>
-    </form>
-</div>
+    <div class="text-center">
+        <form method="get" class="d-inline-block mx-auto">
+            <input type="text" name="q" placeholder="{% trans 'SearchPlaceholder' %}">
+            <button type="submit">{% trans 'SearchButton' %}</button>
+        </form>
+    </div>
 
-<a href="{% url 'album_add' %}" class="btn btn-primary">Add Album</a>
-<table class="table album-table ">
-  <thead>
-    <tr>
-      <th scope="col">Cover</th>
-      <th scope="col">Title</th>
-      <th scope="col">Artist</th>
-      <th scope="col">Price</th>
-      <th scope="col">Format</th>
-      <th scope="col">Release Date</th>
-      <th scope="col">Description</th>
-      <th scope="col">Modify/Delete (Delete within edit)</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for album in albums %}
-    <tr>
-      <td>
-        <a href="{% url 'album_detail' album.id %}">  <!-- Add this line -->
-          <img src="{{ album.cover_art.url }}" alt="{{ album.title }} cover" width="200">
-        </a>  <!-- Add this line -->
-      </td>
-      <td>{{ album.title }}</td>
-      <td>{{ album.artist }}</td>
-      <td>£{{ album.price }}</td>
-      <td>{{ album.format }}</td>
-      <td>{{ album.release_date }}</td>
-      <td>{{ album.description|default:"n/a" }}</td>
-      <td><a href="{% url 'album_edit' album.id %}" class="btn btn-primary">Edit</a></td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    <a href="{% url 'album_add' %}" class="btn btn-primary">{% trans 'AddAlbumButton' %}</a>
+    <table class="table album-table ">
+        <thead>
+        <tr>
+            <th scope="col">{% trans 'CoverHeader' %}</th>
+            <th scope="col">{% trans 'TitleHeader' %}</th>
+            <th scope="col">{% trans 'ArtistHeader' %}</th>
+            <th scope="col">{% trans 'PriceHeader' %}</th>
+            <th scope="col">{% trans 'FormatHeader' %}</th>
+            <th scope="col">{% trans 'ReleaseDateHeader' %}</th>
+            <th scope="col">{% trans 'DescriptionHeader' %}</th>
+            <th scope="col">{% trans 'CommentCountHeader' %}</th>
+            <th scope="col">{% trans 'ModifyDeleteHeader' %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for album in albums %}
+            <tr>
+                <td>
+                    <a href="{% url 'album_detail' album.id %}">
+                        <img src="{{ album.cover_art.url }}" alt="{{ album.title }} cover" width="200">
+                    </a>
+                </td>
+                <td>{{ album.title }}</td>
+                <td>{{ album.artist }}</td>
+                <td>{% trans 'CurrencySymbol' %}{{ album.price }}</td>
+                <td>{{ album.format }}</td>
+                <td>{{ album.release_date }}</td>
+                <td>{{ album.description|default:"n/a" }}</td>
+                <td>{{ album.comment_count }}</td>
+                <td><a href="{% url 'album_edit' album.id %}" class="btn btn-primary">{% trans 'EditButton' %}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </tbody>
+    </table>
 {% endblock %}
 
-{# TODO comment count per album#}
+{# TODO comment count for each album#}

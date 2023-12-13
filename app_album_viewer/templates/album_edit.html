@@ -2,14 +2,14 @@
 {% load i18n %}
 {% load static %}
 {% block content %}
-<h1>Edit Album</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Save changes</button>
-</form>
-<form method="post" action="{% url 'album_delete' form.instance.id %}">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Delete Album</button>
-</form>
+    <h1>{% trans 'EditAlbumHeader' %}</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">{% trans 'SaveChangesButton' %}</button>
+    </form>
+    <form method="post" action="{% url 'album_delete' form.instance.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">{% trans 'DeleteAlbumButton' %}</button>
+    </form>
 {% endblock %}

@@ -3,15 +3,17 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h1 class="text-center">Contact Us</h1>
-            <div class="text-center">
-                <p>Email: devteam@example.com</p>
-                <p>Phone: +1234567890</p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center">{% trans 'ContactUsHeader' %}</h1>
+                <div class="text-center">
+                    <p>{% trans 'EmailLabel' %}:</p>
+                    <p>{% trans 'ContactEmail' %}</p>
+                    <p>{% trans 'PhoneLabel' %}:</p>
+                    <p>{% trans 'ContactPhone' %}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

@@ -3,16 +3,16 @@
 {% load static %}
 
 {% block content %}
-<form method="POST">
-  {% csrf_token %}
-  <h2>Selected Songs</h2>
-  {% for song in selected_songs %}
-    <input type="checkbox" name="song_ids" value="{{ song.id }}" checked>{{ song.title }}<br>
-  {% endfor %}
-  <h2>Unselected Songs</h2>
-  {% for song in unselected_songs %}
-    <input type="checkbox" name="song_ids" value="{{ song.id }}">{{ song.title }}<br>
-  {% endfor %}
-  <input type="submit" value="Update Tracklist">
-</form>
+    <form method="POST">
+        {% csrf_token %}
+        <h2>{% trans 'SelectedSongsHeader' %}</h2>
+        {% for song in selected_songs %}
+            <input type="checkbox" name="song_ids" value="{{ song.id }}" checked>{{ song.title }}<br>
+        {% endfor %}
+        <h2>{% trans 'UnselectedSongsHeader' %}</h2>
+        {% for song in unselected_songs %}
+            <input type="checkbox" name="song_ids" value="{{ song.id }}">{{ song.title }}<br>
+        {% endfor %}
+        <input type="submit" value="Update Tracklist">
+    </form>
 {% endblock %}

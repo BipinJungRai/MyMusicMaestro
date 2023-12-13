@@ -4,21 +4,22 @@
 {% block content %}
     <h1>{{ album.title }}</h1>
     <img src="{{ album.cover_art.url }}" alt="{{ album.title }} cover" width="200">
-    <p>Artist: {{ album.artist }}</p>
-    <p>Price: £{{ album.price }}</p>
-    <p>Format: {{ album.format }}</p>
-    <p>Release Date: {{ album.release_date }}</p>
-    <p>Description: {{ album.description }}</p>
-    <a href="{% url 'recommend_friend' %}?album_id={{ album.id }}" class="btn btn-primary">Recommend a Friend</a>
-    <a href="{% url 'album_songs' album.id %}" class="btn btn-primary">View Songs</a>
+    <p>{% trans 'ArtistLabel' %}: {{ album.artist }}</p>
+    <p>{% trans 'PriceLabel' %}: £{{ album.price }}</p>
+    <p>{% trans 'FormatLabel' %}: {{ album.format }}</p>
+    <p>{% trans 'ReleaseDateLabel' %}: {{ album.release_date }}</p>
+    <p>{% trans 'DescriptionLabel' %}: {{ album.description }}</p>
+    <a href="{% url 'recommend_friend' %}?album_id={{ album.id }}"
+       class="btn btn-primary">{% trans 'RecommendFriendButton' %}</a>
+    <a href="{% url 'album_songs' album.id %}" class="btn btn-primary">{% trans 'ViewSongsButton' %}</a>
 
-    <h2>Comments</h2>
+    <h2>{% trans 'CommentsHeader' %}</h2>
     {% for comment in comments %}
         <div>
             <strong>{{ comment.user.display_name }}</strong>
             <p>{{ comment.text }}</p>
         </div>
     {% empty %}
-        <p>No comments yet.</p>
+        <p>{% trans 'NoCommentsMessage' %}</p>
     {% endfor %}
 {% endblock %}

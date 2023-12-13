@@ -2,24 +2,24 @@
 {% load i18n %}
 {% load static %}
 {% block content %}
-  <div class="container mt-5">
-    <h1 class="display-4">{{ album.title }} Songs</h1>
-    <a href="{% url 'song_choices' album.id %}" class="btn btn-primary">Edit Song List/Track List</a>
-    <table class="table table-striped mt-4">
-      <thead>
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">Running Time (seconds)</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for song in songs %}
-          <tr>
-            <td>{{ song.title }}</td>
-            <td>{{ song.running_time }}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+    <div class="container mt-5">
+        <h1 class="display-4">{% trans 'AlbumSongsHeader' %}</h1>
+        <a href="{% url 'song_choices' album.id %}" class="btn btn-primary">{% trans 'EditSongListButton' %}</a>
+        <table class="table table-striped mt-4">
+            <thead>
+            <tr>
+                <th scope="col">{% trans 'AlbumSongsTableTitleHeader' %}</th>
+                <th scope="col">{% trans 'RunningTimeHeader' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for song in songs %}
+                <tr>
+                    <td>{{ song.title }}</td>
+                    <td>{{ song.running_time }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

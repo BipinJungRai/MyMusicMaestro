@@ -6,13 +6,14 @@ from app_album_viewer.forms import AlbumForm
 from app_album_viewer.models import Album, Song, Comment
 
 
-# Create your views here.
 def show_albums_overview(request):
     query = request.GET.get('q')
     if query:
         albums = Album.objects.filter(title__icontains=query)
     else:
         albums = Album.objects.all()
+    for album in albums:
+        album.comment_count = album.comments.count()
     return render(request, 'albums_overview.html', {'albums': albums})
 
 
@@ -100,4 +101,4 @@ def show_account(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('page_home')  # Redirect to the home page after logout
+    return redirect('page_login')

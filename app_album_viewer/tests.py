@@ -1,9 +1,11 @@
+# Import necessary modules and models
 from django.contrib.auth import get_user_model
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.utils import timezone
 
-from app_album_viewer.models import Album, Song, Comment
+from app_album_viewer.models import Album, Song, Comment  # Import models from the app
+# Import the custom User model
 from .models import User
 
 
@@ -191,4 +193,39 @@ class ViewTest(TestCase):
         )
         self.song = Song.objects.create(title="Test Song", running_time=180)
         self.album.songs.add(self.song)
-        self.comment
+        self.comment = Comment.objects.create(user=self.user, album=self.album, text="This is a test comment.")
+
+    # Test case for albums overview view
+    def test_show_albums_overview(self):
+        # Make a request to the albums overview view and assert the response and template used
+        response = self.client.get(reverse('albums_overview'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'albums_overview.html')
+        self.assertIn('albums', response.context)
+
+    # Test case for album songs view
+    def test_show_album_songs(self):
+        # Make a request to the album songs view and assert the response and template used
+        response = self.client.get(reverse('album_songs', args=[self.album.id]))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'album_songs.html')
+        self.assertIn('album', response.context)
+        self.assertIn('songs', response.context)
+
+    # Test case for album detail view
+    def test_show_album_detail(self):
+        # Make a request to the album detail view and assert the response and template used
+        response = self.client.get(reverse('album_detail', args=[self.album.id]))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'album_detail.html')
+        self.assertIn('album', response.context)
+        self.assertIn('comments', response.context)
+
+    # Test case for account view
+    def test_show_account(self):
+        # Log in the user, make a request to the account view, and assert the response and template used
+        self.client.login(username='testuser', password='testpass123')
+        response = self.client.get(reverse('account'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'account.html')
+        self.assertIn('comments', response.context)

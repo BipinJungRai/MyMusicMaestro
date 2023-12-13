@@ -112,7 +112,7 @@ msgid "LogoutButton"
 msgstr "Logout"
 
 msgid "YourCommentsHeader"
-msgstr "Your Comments"
+msgstr "Your Details"
 
 msgid "UsernameLabel"
 msgstr "Username"
@@ -121,7 +121,7 @@ msgid "DisplayNameLabel"
 msgstr "Display Name"
 
 msgid "CommentsForAlbumHeader"
-msgstr "Comments for Album"
+msgstr "Comments"
 
 msgid "AlbumLabel"
 msgstr "Album"

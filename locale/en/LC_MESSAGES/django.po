@@ -1,13 +1,11 @@
-msgid ""
-msgstr ""
-"Language: en\n"
-
+# App Information
 msgid "AppName"
 msgstr "MyMusic Maestro"
 
 msgid "copyright"
 msgstr " &copy; Copyright"
 
+# Navigation
 msgid "Home"
 msgstr "Home"
 
@@ -17,8 +15,10 @@ msgstr "About"
 msgid "Contact"
 msgstr "Contact"
 
+# Album Section
 msgid "Albums"
 msgstr "Albums"
 
+# User Account
 msgid "Account"
 msgstr "Account"

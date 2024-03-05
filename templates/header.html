@@ -1,33 +1,88 @@
 {% load static %}
 {% load i18n %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title> Sidebar Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">SterLearning</div>
+        <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-home'></i>
+                <span class="links_name">Home</span>
+            </a>
+            <span class="tooltip">Home</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-user'></i>
+                <span class="links_name">Account</span>
+            </a>
+            <span class="tooltip">Account</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bxs-medal'></i>
+                <span class="links_name">Leaderboard</span>
+            </a>
+            <span class="tooltip">Leaderboard</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-edit'></i>
+                <span class="links_name">Tests</span>
+            </a>
+            <span class="tooltip">Tests</span>
+        </li>
 
-<div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light navbar-transparent custom-navbar ">
-        <img src="{% static 'SapientCLTRSpin.gif' %}" class="d-inline-block align-top"
-             alt="">
-        <button class="navbar-toggler custom-navbar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse " id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">{% trans 'Home' %}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about/">{% trans 'About' %}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact/">{% trans 'Contact' %}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/albums/">{% trans 'Albums' %}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account' %}">{% trans 'Account' %}</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <li class="profile">
+            <div class="profile-details">
+                <img src="profile.jpg" alt="profileImg">
+                <div class="name_job">
+                    <div class="name">Test User</div>
+                    <div class="job">Student</div>
+                </div>
+            </div>
+            <i class='bx bx-log-out' id="log_out"></i>
+        </li>
+    </ul>
 </div>
+
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
+
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();//calling the function(optional)
+    });
+
+    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+    });
+
+    // following are the code to change sidebar button(optional)
+    function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+        }
+    }
+</script>
+</body>
+</html>

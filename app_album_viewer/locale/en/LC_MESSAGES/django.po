@@ -1,8 +1,10 @@
+# Language and Content-Type
 msgid ""
 msgstr ""
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
+# Song Selection
 msgid "SelectedSongsHeader"
 msgstr "Selected Songs"
 
@@ -12,15 +14,18 @@ msgstr "Unselected Songs"
 msgid "UpdateTracklistButton"
 msgstr "Update Tracklist"
 
+# Search
 msgid "SearchPlaceholder"
 msgstr "Search albums"
 
 msgid "SearchButton"
 msgstr "Search"
 
+# Album Creation
 msgid "AddAlbumButton"
 msgstr "Add Album"
 
+# Album Details
 msgid "CoverHeader"
 msgstr "Cover"
 
@@ -42,15 +47,18 @@ msgstr "Release Date"
 msgid "DescriptionHeader"
 msgstr "Description"
 
+# Album Modification
 msgid "ModifyDeleteHeader"
 msgstr "Modify/Delete (Delete within edit)"
 
 msgid "EditButton"
 msgstr "Edit"
 
+# Currency
 msgid "CurrencySymbol"
 msgstr "£"
 
+# Album Songs
 msgid "AlbumSongsHeader"
 msgstr "Songs"
 
@@ -63,6 +71,7 @@ msgstr "Title"
 msgid "RunningTimeHeader"
 msgstr "Running Time (seconds)"
 
+# Album Editing
 msgid "EditAlbumHeader"
 msgstr "Edit Album"
 
@@ -72,6 +81,7 @@ msgstr "Save changes"
 msgid "DeleteAlbumButton"
 msgstr "Delete Album"
 
+# Album Labels
 msgid "ArtistLabel"
 msgstr "Artist"
 
@@ -87,12 +97,15 @@ msgstr "Release Date"
 msgid "DescriptionLabel"
 msgstr "Description"
 
+# Recommendations
 msgid "RecommendFriendButton"
 msgstr "Recommend a Friend"
 
+# Song Viewing
 msgid "ViewSongsButton"
 msgstr "View Songs"
 
+# Comments
 msgid "CommentsHeader"
 msgstr "Comments"
 
@@ -102,15 +115,18 @@ msgstr "No comments yet."
 msgid "CommentCountHeader"
 msgstr "Comment Count"
 
+# Album Creation
 msgid "Album_add.Header"
 msgstr "Create an Album"
 
 msgid "Album_add.Button"
 msgstr "Add Album"
 
+# Logout
 msgid "LogoutButton"
 msgstr "Logout"
 
+# User Details
 msgid "YourCommentsHeader"
 msgstr "Your Details"
 
@@ -120,11 +136,13 @@ msgstr "Username"
 msgid "DisplayNameLabel"
 msgstr "Display Name"
 
+# Album Comments
 msgid "CommentsForAlbumHeader"
 msgstr "Comments"
 
 msgid "AlbumLabel"
 msgstr "Album"
 
+# Account Comments
 msgid "AccountNoCommentsMessage"
 msgstr "No comments made...yet >:)"
